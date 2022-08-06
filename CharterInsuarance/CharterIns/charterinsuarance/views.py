@@ -15,7 +15,7 @@ import os
 from .utils import *
 from charterinsuarance.models import Transaction, User
 from django.db.models import Sum
-url = "http://clicl.charteredlifebd.com:85/ApiCollection/"
+url = ""
 
 
   
@@ -63,7 +63,7 @@ def verify(request):
         if(request.method=="POST"):
             # print(request.POST)
             data1 = {}
-            data1["USERID"] = "50154800"
+            data1["USERID"] = ""
             data1["POLICY"] = request.POST["policynum"]
             
             response=requests.post(url + "DataVerify",data = data1).json()
@@ -89,8 +89,8 @@ def verify(request):
                 
                 # print(newtxn.id)
                 data2 = {}
-                data2["USERID"] = "50154800"
-                data2["PWD"] = "00x7yll33"
+                data2["USERID"] = ""
+                data2["PWD"] = ""
                 data2["POLICY"] = request.POST["policynum"]
                 data2["AMOUNT"] = request.POST["amount"]
                 data2["PAYERMOBILENO"] = request.POST["payermobileno"]
